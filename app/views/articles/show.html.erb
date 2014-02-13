@@ -14,6 +14,16 @@
   <strong>Published:</strong>
   <%= @article.published %>
 </p>
+<h3>Article has <%=@article.comments.count%> Comments</h3>
 
+<ul>
+<% @article.comments.each do |comment|
+  comment_str = comment.body? ? comment.body.truncate(10) : 'Empty Comment'
+ %>
+
+  <li><%=link_to comment_str, comment_path(comment) %></li>
+
+<% end %>
+</ul>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

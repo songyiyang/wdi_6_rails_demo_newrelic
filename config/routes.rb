@@ -1,4 +1,6 @@
 Wdi6RailsDemoNewrelic::Application.routes.draw do
+  resources :comments
+
   resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
