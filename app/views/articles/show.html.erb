@@ -22,6 +22,9 @@
  %>
 
   <li><%=link_to comment_str, comment_path(comment) %></li>
+  <% if comment.user %>
+  <li>Created by: <%=comment.user.email%></li>
+  <% end %>
 
 <% end %>
 </ul>

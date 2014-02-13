@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    #@articles = Article.includes(:comments).all    
   end
 
   # GET /articles/1
@@ -64,6 +65,7 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
+#       @article = Article.includes(:comments).find(params[:id])
       @article = Article.find(params[:id])
     end
 
